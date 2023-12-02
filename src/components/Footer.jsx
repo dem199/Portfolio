@@ -56,13 +56,13 @@ const Footer = () => {
         href: 'https://linkedin.com/in/opeyemi-olatunbosun-85b30b163',
        
     },
-        // Add similar objects for other social media icons
+      
     ];
 
     return (
         <footer className={` pt-10 ${isDarkMode ? 'bg-[#0F0A1E] text-[#F0F0F0]' : 'bg-[#F0F0F0] text-[#0F0A1E]'} py-10 text-center`}>
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row justify-center items-center mb-8">
+        <div className="flex flex-col md:flex-row justify-center px-5 items-center mb-8">
           {/* Hidden on small screens, shown on medium and larger screens */}
           <div className="md:hidden mb-4">
             <p className="text-xl font-bold mb-2">Let's connect</p>

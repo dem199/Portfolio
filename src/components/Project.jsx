@@ -1,5 +1,6 @@
 import React from 'react';
 import TenziesGame from '../assets/tenzies-game.png';
+import VanLife from '../assets/vanlife.png';
 import MovieWatchlist from '../assets/movie-watchlist.png';
 import SpeedTypingGame from '../assets/speed-typing-game.png';
 import TindogApp from '../assets/Tindog-app.png';
@@ -10,6 +11,7 @@ import RegalCravings from '../assets/regal-cravings.png';
 import 'animate.css'
 import TrackVisibility from 'react-on-screen'
 import { useDarkMode } from '../DarkModeContext';
+
 
 const Project = () => {
     const { isDarkMode } = useDarkMode();
@@ -63,7 +65,7 @@ const Project = () => {
           name: "Speed Typing App",
           image: SpeedTypingGame,
           github: "https://github.com/dem199/Speed-typing-game",
-          live: "dem199.github.io/Speed-typing-game",
+          live: "https://dem199.github.io/Speed-typing-game",
           description:"The Speed Typing Game is an exciting and challenging game that tests your typing skills and speed. The objective is to type as many words as possible within a specified time limit. With a countdown timer, real-time word tracking, and a final word count announcement, the game provides an engaging and competitive experience for users.",
       },
       {
@@ -83,11 +85,20 @@ const Project = () => {
           description:"Tenzies is a simple dice game where you try to get all 10 dice to show the same number. Roll the dice, hold onto the dice that are showing the same number, and roll the other dice again. The first player to get all 10 dice to show the same number wins! This game was created using React. It is a fun and challenging game that is perfect for a quick break or a long gaming session.",
       },
       
+      {
+          id: 9,
+          name: "Vanlife",
+          image: VanLife,
+          github: "https://github.com/dem199/vanlife-app",
+          live: "https://dem199.github.io/vanlife-app/",
+          description:"VanLife is an Airbnb-style web app that allows users to rent out travel vans for their next big road trips. With VanLife, you can find vans that are fully equipped with everything you need for a comfortable and enjoyable trip, including beds, kitchens, and bathrooms. You can also find vans that are customized to fit your specific needs, such as vans with off-road capabilities or vans that are pet-friendly.",
+      },
+      
     ];
 
     return (
         <section name="project" className={`w-full pt-20  ${isDarkMode ? 'bg-[#150E28] text-white' : 'bg-[#F0F0F0] text-[#150E28]'}`}>
-        <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
+        <div className='max-w-[1000px] mx-auto p-4  md:pl-20 flex flex-col justify-center w-full h-full'>
             <div className='pb-8 '>
                 <TrackVisibility>
                     {({ isVisible }) => (
@@ -105,18 +116,22 @@ const Project = () => {
                 {data.map((item, id) => (
                     
                                 <div className={`shadow-md  shadow-[#D434FE] px-2 rounded-lg`}>
-                                    <h1 className={`text-3xl font-bold my-3 text-${isDarkMode ? '#D434FE' : '#1A237E'}`}>{item.name}</h1>
+                                    <h1 className={`text-3xl font-bold my-5 text-${isDarkMode ? '#D434FE' : '#1A237E'}`}>{item.name}</h1>
 
-                                    <img src={item.image} alt="image-pics" className={`rounded-md duration-200 hover:scale-105`} />
+                                    <img src={item.image} alt="image-pics" className={`rounded-md my-5 duration-200 hover:scale-105`} />
                                     <p className={`text-${isDarkMode ? '#D434FE' : '#1A237E'}`}>{item.description}</p>
-                                    <div className="flex items-center justify-center ">
-                                        <a href={item.live}>
-                                          s  <button className={`w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105`}>Demo</button>
-                                        </a>
-                                        <a href={item.github}>
-                                            <button className={`w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105 `}>Code</button>
-                                        </a>
-                                    </div>
+                                    <div className="flex items-center justify-center flex-wrap">
+                                    <a href={item.live}>
+                                    <button className={`w-full md:w-1/2 px-6 py-3 m-2 md:m-4 duration-200 hover:scale-110 focus:text-[#D434FE]`}>
+                                Demo
+                        </button>
+                        </a>
+                        <a href={item.github}>
+                        <button className={`w-full md:w-1/2 px-6 py-3 m-2 md:m-4 duration-200 hover:scale-110 focus:text-[#D434FE]`}>
+                                    Code
+                         </button>
+    </a>
+</div>
 
                                 </div>
                            

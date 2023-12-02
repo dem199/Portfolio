@@ -161,7 +161,7 @@ const Skills = () => {
 
     return (
         <section className={` w-full pt-20 ${isDarkMode ? 'bg-[#150E28] text-white' : 'bg-[#F0F0F0] text-[#150E28]'}`}>
-        <div className='max-w-[1000px] p-4 mx-auto flex flex-col justify-center w-full h-full'>
+        <div className='max-w-[1000px] p-4  mx-auto md:pl-20 flex flex-col justify-center w-full h-full'>
             <div>
                 <TrackVisibility>
                     {({ isVisible }) => (

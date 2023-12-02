@@ -12,13 +12,13 @@ function Home() {
 
   return (
     <section name="home" className={`w-full min-h-screen ${isDarkMode ? 'bg-[#150E28]' : 'bg-[#F0F0F0]'} text-${isDarkMode ? 'white' : '#150E28'}`}>
-      <div className="min-h-screen sm:flex pt-48 items-center justify-center md:justify-between">
+      <div className="min-h-screen sm:flex pt-48 items-center sm:px-5 md:px-20 justify-center md:justify-between">
         <div className='max-w-screen-lg mx-auto flex flex-col items-center justify-center sm:flex-row'>
           <div className='justify-center text-center sm:text-left'>
             <TrackVisibility>
               {({ isVisible }) => (
                 <div className={isVisible ? "animate__animated animate__backInDown" : ""}>
-                  <h1 className={`text-4xl sm:text-5xl font-bold text-${isDarkMode ? '#D434FE' : '#1A237E'}`}>
+                  <h1 className={`text-4xl sm:text-5xl  font-bold text-${isDarkMode ? '#D434FE' : '#1A237E'}`}>
                     <span className={`text-${isDarkMode ? '#D434FE' : '#1A237E'}`}>Hi, I'm{" "}</span>
                     <br />
                     <TypeAnimation
@@ -51,7 +51,7 @@ function Home() {
                       to="project"
                       smooth
                       duration={500}
-                      className={`group text-${isDarkMode ? '#150E28' : '#F0F0F0'} px-6 py-3 flex items-center text-sm hover:bg-${isDarkMode ? 'white' : '#333333'} bg-gradient-to-b from-[#D434FE] to-[#903AFF] rounded-md cursor-pointer`}
+                      className={`group text-${isDarkMode ? '#150E28' : '#F0F0F0'} focus:text-[#F0F0F0] hover:scale-110 px-6 py-3 flex items-center text-sm hover:bg-${isDarkMode ? 'white' : '#333333'} bg-gradient-to-b from-[#D434FE] to-[#903AFF] rounded-md cursor-pointer`}
                     >
                       Portfolio
                       <span className='group-hover:rotate-90 duration-300'>
@@ -67,7 +67,7 @@ function Home() {
                     <a
                       href="mailto:olatunbosunopeyemi186035@gmail.com?subject=Feedback&body=Message"
                       target="_blank"
-                      className={`group text-${isDarkMode ? '#150E28' : '#F0F0F0'} px-6 py-3 flex items-center text-sm bg-gradient-to-b from-[#D434FE] to-[#903AFF] rounded-md cursor-pointer`}
+                      className={`group text-${isDarkMode ? '#150E28' : '#F0F0F0'} focus:text-[#F0F0F0] hover:scale-110 px-6 py-3 flex items-center text-sm bg-gradient-to-b from-[#D434FE] to-[#903AFF] rounded-md cursor-pointer`}
                     >
                       Hire me
                       <span className='group-hover:rotate-90 duration-300'>
