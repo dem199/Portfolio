@@ -5,9 +5,9 @@ import { TypeAnimation } from 'react-type-animation';
 import HeaderImg from "../assets/header-img.svg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
-import { useDarkMode } from '../DarkModeContext'; // Import the custom hook
+import { useDarkMode } from '../DarkModeContext'; // Imported the custom hook
 
-function Home() {
+const Home: React.FC = () => {
   const { isDarkMode } = useDarkMode(); // Access the isDarkMode state
 
   return (
@@ -18,7 +18,7 @@ function Home() {
             <TrackVisibility>
               {({ isVisible }) => (
                 <div className={isVisible ? "animate__animated animate__backInDown" : ""}>
-                  <h1 className={`text-4xl sm:text-5xl  font-bold text-${isDarkMode ? '#D434FE' : '#1A237E'}`}>
+                  <h1 className={`text-4xl sm:text-5xl font-bold text-${isDarkMode ? '#D434FE' : '#1A237E'}`}>
                     <span className={`text-${isDarkMode ? '#D434FE' : '#1A237E'}`}>Hi, I'm{" "}</span>
                     <br />
                     <TypeAnimation

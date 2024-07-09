@@ -1,12 +1,16 @@
-// DarkModeContext.jsx
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-// Create a context for dark mode
-const DarkModeContext = createContext();
+// Define types for context values
+interface DarkModeContextType {
+  isDarkMode: boolean;
+  toggleTheme: () => void;
+}
 
-export const DarkModeProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+// Create a context for dark mode
+const DarkModeContext = createContext<DarkModeContextType | undefined>(undefined);
+
+export const DarkModeProvider: React.FC = ({ children }) => {
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   // Function to toggle dark mode
   const toggleTheme = () => {
@@ -33,6 +37,11 @@ export const DarkModeProvider = ({ children }) => {
   );
 };
 
-export const useDarkMode = () => {
-  return useContext(DarkModeContext);
+export const useDarkMode = (): DarkModeContextType => {
+  const context = useContext(DarkModeContext);
+  if (!context) {
+    throw new Error('useDarkMode must be used within a DarkModeProvider');
+  }
+  return context;
 };
+

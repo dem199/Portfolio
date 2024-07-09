@@ -1,19 +1,14 @@
-// index.js or App.jsx
 import React from 'react';
-import ReactDOM from "react-dom/client";
-import App from './App.jsx';
-import { DarkModeProvider } from './DarkModeContext';
-import './index.css'
+import ReactDOM from 'react-dom/client';
+import App from './App.tsx';
 
+import { DarkModeProvider } from './DarkModeContext.tsx';
+import './index.css';
 
-
-
-
-  
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  <DarkModeProvider>
-    <App />
-  </DarkModeProvider>
-</React.StrictMode>,
+    <DarkModeProvider>
+      <App />
+    </DarkModeProvider>
+  </React.StrictMode>
 );
